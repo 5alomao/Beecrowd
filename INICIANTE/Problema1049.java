@@ -26,7 +26,7 @@ public class Main {
                 if(c.equals("hematofago"))
                     System.out.println("pulga");
                 else if(c.equals("herbivoro"))
-                    System.out.println("largarta");
+                    System.out.println("lagarta");
             }else if(b.equals("anelideo")){
                 if(c.equals("hematofago"))
                     System.out.println("sanguessuga");
