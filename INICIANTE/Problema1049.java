@@ -16,7 +16,7 @@ public class Main {
                 else if(c.equals("onivoro"))
                     System.out.println("pomba");
             }else if(b.equals("mamifero")){
-                if(c.equals("herbivero"))
+                if(c.equals("herbivoro"))
                     System.out.println("vaca");
                 else if(c.equals("onivoro"))
                     System.out.println("homem");
