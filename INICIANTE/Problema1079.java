@@ -15,7 +15,6 @@ public class Main {
 
             System.out.printf("%.1f%n", mediaP);
         }
-
         sc.close();
     }
 }
