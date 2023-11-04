@@ -1,34 +1,39 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
-public class Main{
-    public static void main (String[] args){
+public class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
         
-        Scanner s = new Scanner (System.in);
+        double n1 = sc.nextDouble();
+        n1 *= 2;
+        double n2 = sc.nextDouble();
+        n2 *= 3;
+        double n3 = sc.nextDouble();
+        n3 *= 4;
+        double n4 = sc.nextDouble();
+        n4 *= 1;
         
-        double n1 = s.nextDouble();
-        double n2 = s.nextDouble();
-        double n3 = s.nextDouble();
-        double n4 = s.nextDouble();
+        double med = (n1+n2+n3+n4)/10;
+        DecimalFormat df = new DecimalFormat("#.0");
         
-        double media = (n1*2+n2*3+n3*4+n4*1)/10;
-        System.out.printf("Media: %.1f\n",media);
-        
-        if(media >= 7){
-            System.out.printf("Aluno aprovado.\n");
+        System.out.println("Media: " + df.format(med));
+        if(med >= 7.0) {
+            System.out.println("Aluno aprovado.");
+        } else if (med < 5.0) {
+            System.out.println("Aluno reprovado.");
+        } else {
+            System.out.println("Aluno em exame.");
+            double nExame = sc.nextDouble();
+            System.out.println("Nota do exame: " + df.format(nExame));
+            med = (med+nExame) / 2;
+            if(med >= 5.0) {
+                System.out.println("Aluno aprovado.");
+            } else {
+                System.out.println("Aluno reprovado.");
+            }
+            System.out.println("Media final: " + df.format(med));
         }
-        else if(media < 5){
-            System.out.printf("Aluno reprovado.\n");
-        }
-        else if(media >= 5 && media <= 6.9){
-            System.out.printf("Aluno em exame.\n");
-            double exame = s.nextDouble();
-            System.out.printf("Nota do exame: %.1f\n",exame);
-            media = (media+exame)/2;
-            if(media >= 5)
-                System.out.printf("Aluno aprovado.\n");
-            else
-                System.out.printf("Aluno reprovado.\n");
-            System.out.printf("Media final: %.1f\n",media);
-        }
+        sc.close();
     }
 }
